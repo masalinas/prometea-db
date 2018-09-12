@@ -1,4 +1,4 @@
-package com.thingtrack.prometea.domain;
+package com.thingtrack.prometea.domain.prometea;
 
 import java.io.Serializable;
 import java.util.Date;
