@@ -51,7 +51,8 @@ if __name__ == '__main__':
     
     for index, rows in dataset.iterrows(): 
         db.Pacientes.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
-                                {'$push': {"episodios": {"ciap": rows.ciap, 
+                                {'$push': {"episodios": {"enfermedad": 'diabetes',
+                                                         "ciap": rows.ciap, 
                                                          "descripcion": rows.descripcio, 
                                                          "fecha": rows.fecha,
                                                          "alta": rows.fechAlta}}})
@@ -65,5 +66,5 @@ if __name__ == '__main__':
     # close progress bar
     pbar.close()              
     
-    duration = datetime.datetime.now() - init
-    print('Import ' + str(num) + ' Episodios' + ' en ' + str(duration))
+    print()    
+    print('Import ' + str(num) + ' Episodios' + ' en ' + str(datetime.datetime.now() - init))
