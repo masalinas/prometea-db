@@ -1,2 +1,0 @@
-# prometea
-Medical Prometea Project
