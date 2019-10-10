@@ -1,2 +1,2 @@
-# Prometea DB Import
-Import Python scrypts to import Prometea from MS Access files to MongoDB Database
+# Prometea DB
+Python scripts to import Prometea from MS Access files to MongoDB Database
