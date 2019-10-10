@@ -38,7 +38,7 @@ if __name__ == '__main__':
     print('STEP 02: Load Prometea MS Access dataset')
     print('----------------------------------------')
     print('Loading Prometea Episodios Dataset from ' + args.dataset)    
-    dataset = mdb.read_table(args.dataset, "Episodios")        
+    dataset = mdb.read_table(args.dataset, 'Episodios')        
     print()
           
     # Iterate over parent datasets
@@ -51,11 +51,11 @@ if __name__ == '__main__':
     
     for index, rows in dataset.iterrows(): 
         db.Pacientes.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
-                                {'$push': {"episodios": {"enfermedad": 'diabetes',
-                                                         "ciap": rows.ciap, 
-                                                         "descripcion": rows.descripcio, 
-                                                         "fecha": rows.fecha,
-                                                         "alta": rows.fechAlta}}})
+                                {'$push': {'episodios': {'enfermedad': 'epoc',
+                                                         'ciap': rows.ciap, 
+                                                         'descripcion': None, 
+                                                         'fecha': rows.F_deteccion,
+                                                         'alta': rows.F_cierre}}})
         
         # update progress bar and num instances inserted
         num = num + 1

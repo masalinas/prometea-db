@@ -33,7 +33,7 @@ if __name__ == '__main__':
     print('STEP 02: Load Prometea MS Access dataset')
     print('----------------------------------------')
     print('Loading Prometea Pacientes Dataset from ' + args.dataset)    
-    datasetPaciente = mdb.read_table(args.dataset, "Pacientes")        
+    datasetPaciente = mdb.read_table(args.dataset, 'Pacientes')        
     print()
           
     # Iterate over parent datasets

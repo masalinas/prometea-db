@@ -39,7 +39,7 @@ if __name__ == '__main__':
     print('STEP 02: Load Prometea MS Access dataset')
     print('----------------------------------------')
     print('Loading Prometea Prescripciones Dataset from ' + args.dataset)    
-    dataset = mdb.read_table(args.dataset, "prescripciones")        
+    dataset = mdb.read_table(args.dataset, 'prescripciones')        
     print()
           
     # Iterate over parent datasets
@@ -52,17 +52,17 @@ if __name__ == '__main__':
     
     for index, rows in dataset.iterrows(): 
         db.Pacientes.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
-                                {'$push': {"prescripciones": {"enfermedad": 'cardiopatia',
-                                                              "cap": rows.cap, 
-                                                              "capit": rows.capit, 
-                                                              "subcap": rows.subcap, 
-                                                              "codter": rows.codter, 
-                                                              "codatc": rows.codatc, 
-                                                              "codnac": rows.codnac, 
-                                                              "tipoACD": rows.tipoACD, 
-                                                              "tipoTE": rows.tipoTE, 
-                                                              "fecha": rows.fecha,
-                                                              "fechaCierre": rows.fechaCierre}}})
+                                {'$push': {'prescripciones': {'enfermedad': 'cardiopatia',
+                                                              'cap': rows.cap, 
+                                                              'capit': rows.capit, 
+                                                              'subcap': rows.subcap, 
+                                                              'codter': rows.codter, 
+                                                              'codatc': rows.codatc, 
+                                                              'codnac': rows.codnac, 
+                                                              'tipoACD': rows.tipoACD, 
+                                                              'tipoTE': rows.tipoTE, 
+                                                              'fecha': rows.fecha,
+                                                              'fechaCierre': rows.fechaCierre}}})
         
         # update progress bar and num instances inserted
         num = num + 1
