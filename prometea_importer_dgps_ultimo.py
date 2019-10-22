@@ -52,11 +52,11 @@ if __name__ == '__main__':
     
     for index, rows in dataset.iterrows(): 
         db.Pacientes.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
-                                {'$push': {'dgps': {'enfermedad': 'cardiopatia',
+                                {'$push': {'dgps': {'enfermedad': 'epoc',
                                                     'dgp': rows.dgp, 
                                                     'dgpTxt': rows.dgpTxt, 
                                                     'valor': rows.valor, 
-                                                    'fecha': rows.fecha}}})
+                                                    'fecha': rows.Fecha_registro}}})
         
         # update progress bar and num instances inserted
         num = num + 1

@@ -52,7 +52,7 @@ if __name__ == '__main__':
     
     for index, rows in dataset.iterrows(): 
         db.Pacientes.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
-                                {'$push': {'prescripciones': {'enfermedad': 'cardiopatia',
+                                {'$push': {'prescripciones': {'enfermedad': 'prostata',
                                                               'cap': rows.cap, 
                                                               'capit': rows.capit, 
                                                               'subcap': rows.subcap, 

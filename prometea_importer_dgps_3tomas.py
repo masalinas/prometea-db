@@ -35,7 +35,7 @@ if __name__ == '__main__':
     # load to MS Access prometea database        
     print('STEP 02: Load Prometea MS Access dataset')
     print('----------------------------------------')
-    print('Loading Prometea DGP 5 Años Dataset from ' + args.dataset)    
+    print('Loading Prometea DGP 3 Tomas Dataset from ' + args.dataset)    
     dataset = mdb.read_table(args.dataset, 'DGP_3Tomas')
     print()
           
@@ -48,8 +48,8 @@ if __name__ == '__main__':
     num = 0
     
     for index, rows in dataset.iterrows(): 
-        db.Pacientes.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
-                                {'$push': {'dgps': {'enfermedad': 'cardiopatia',
+        db.Paciente.update_one({'centro': rows.centro, 'nhc': rows.nhc}, 
+                                {'$push': {'dgps': {'enfermedad': 'epoc',
                                                     'dgp': rows.dgp, 
                                                     'dgpTxt': rows.dgpTxt, 
                                                     'valor': rows.valor, 
